@@ -4,6 +4,7 @@ namespace App\Livewire\Admin\Wishlist;
 
 use App\Livewire\Forms\WishlistItemForm;
 use App\Models\WishlistItem;
+use Livewire\Attributes\Layout;
 use Livewire\Component;
 
 class Edit extends Component
@@ -22,6 +23,7 @@ class Edit extends Component
         return $this->redirect(route('admin.wishlist.index'));
     }
 
+    #[Layout('components.layouts.admin')]
     public function render()
     {
         return view('livewire.admin.wishlist.edit')->title(_('Edit Wishlist Item'));
