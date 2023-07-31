@@ -1,6 +1,9 @@
 <?php
 
 use App\Livewire\Wishlist;
+use App\Livewire\Admin\Wishlist\Create;
+use App\Livewire\Admin\Wishlist\Edit;
+use App\Livewire\Admin\Wishlist\Index;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,3 +22,9 @@ Route::get('/', function () {
 });
 
 Route::get('/wishlist', Wishlist::class);
+
+Route::prefix('admin')->name('admin.')->group(function () {
+    Route::get('/wishlist', Index::class)->name('wishlist.index');
+    Route::get('/wishlist/create', Create::class)->name('wishlist.create');
+    Route::get('/wishlist/edit/{wishlistItem}', Edit::class)->name('wishlist.edit');
+});
