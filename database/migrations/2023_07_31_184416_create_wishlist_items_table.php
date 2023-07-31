@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('wishlist_items', function (Blueprint $table) {
             $table->id();
             $table->string('description');
-            $table->bool('is_active');
-            $table->string('buyer');
+            $table->boolean('is_active')->default(true);
+            $table->string('buyer')->nullable();
             $table->timestamps();
         });
     }
