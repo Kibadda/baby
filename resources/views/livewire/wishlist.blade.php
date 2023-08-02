@@ -1,21 +1,13 @@
 <div class="wishlist">
     <ul>
-        @foreach($wishlistItems as $item)
-            <li>
+        <div class="horizontal-line">
+            @foreach($wishlistItems as $item)
                 @if($item->is_active)
-                    <s>
-                        <label>
-                            <input type="checkbox" disabled checked>
-                            {{$item->description}}
-                        </label>
-                    </s>
-                @else
-                    <label>
-                        <input type="checkbox" disabled>
+                    <li>
                         {{$item->description}}
-                    </label>
+                    </li>
                 @endif
-            </li>
-        @endforeach
+            @endforeach
+        </div>
     </ul>
 </div>

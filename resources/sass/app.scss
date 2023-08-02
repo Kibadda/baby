@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap');
-/* Pallet URL: https://coolors.co/433a3f-8c8aa8-beb7df-3c887e-f7d488 */
+/* Pallet URL: https://coolors.co/433a3f-504e6a-beb7df-3c887e-f7d488 */
 
 $background: #433A3F;
-$background_secondary: #8C8AA8;
+$background_secondary: #504E6A;
 $highlight_yellow: #F7D488;
 $highlight_cyan: #3C887E;
 $highlight_grey: #BEB7DF;
@@ -10,34 +10,93 @@ $highlight_grey: #BEB7DF;
 #front {
     font-family: 'Comic Neue', cursive;
     margin: 0;
-    height: 100vh;
+    height: 100%;
     width: 100%;
     display: grid;
     place-items: center;
-    background: $background;
+    background: radial-gradient(circle, rgba($background_secondary,1) 0%, $background 100%);
 }
 
 .wishlist {
+    font-size: 300%;
     background: $highlight_yellow;
-    padding: .5rem;
-    border-radius: 10px;
     display: grid;
+    position: relative;
     place-items: center;
-}
+    margin: 5rem;
+    border-radius: 2px;
 
-.wishlist {
+    &:before,
+    &:after {
+        content: '';
+        position: absolute;
+        bottom: 10px;
+        width: 40%;
+        height: 10px;
+        box-shadow: 0 10px 20px rgba(black, .7);
+        z-index: -1;
+        transition: all .3s ease-in-out;
+    }
+
+    &:before {
+        left: 15px;
+        transform: skew(-5deg) rotate(-5deg);
+    }
+
+    &:after {
+        right: 15px;
+        transform: skew(5deg) rotate(5deg);
+    }
+
+    &:hover:before,
+    &:hover:after {
+        box-shadow: 0 6px 14px rgba(black, .4);
+    }
+
+    &:hover:before {
+        left: 5px;
+    }
+
+    &:hover:after {
+        right: 5px;
+    }
+
+    .horizontal-line {
+        position: relative;
+        height: 100%;
+    }
+
+    .horizontal-line {
+        position: relative;
+        height: 100%;
+
+        &:before {
+            content: ' ';
+            padding: 3rem 0;
+            height: 100%;
+            top: -3rem;
+            left: 5.5rem;
+            position: absolute;
+            border-left: 3px dashed $highlight_cyan;
+        }
+    }
+
     ul {
         padding: 0;
         list-style-type: none;
     }
 
     li:first-child {
-        border-top: 0;
+        border-top: 1px dashed $background;
+    }
+
+    li:last-child {
+        border-bottom: 1px dashed $background;
     }
 
     li {
-        padding: .5rem .5rem;
-        border-top: 1px solid #433A3F;
+        padding: .5rem 1.5rem .5rem 7rem;
+        border-top: 1px dashed $background;
     }
 
     input[type="checkbox"] {
