@@ -1,5 +1,5 @@
 <div>
-    <a href="{{ route('admin.wishlist.create') }}" wire:navigate>@lang('Create Wishlist Item')</a>
+    <a href="{{ route('admin.wishlist.create') }}" wire:navigate>@lang('Create')</a>
     <table>
         <thead>
             <tr>
