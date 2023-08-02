@@ -13,11 +13,10 @@ class Wishlist extends Component
 
     public function mount(): void
     {
-        $this->title = _("Wishlist");
         $this->wishlistItems = WishlistItem::all();
     }
     public function render()
     {
-        return view('livewire.wishlist');
+        return view('livewire.wishlist')->title(_("Wishlist"));
     }
 }
