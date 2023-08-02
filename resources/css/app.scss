@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap');
+/* Pallet URL: https://coolors.co/433a3f-8c8aa8-beb7df-3c887e-f7d488 */
+
+$background: #433A3F;
+$background_secondary: #8C8AA8;
+$highlight_yellow: #F7D488;
+$highlight_cyan: #3C887E;
+$highlight_grey: #BEB7DF;
+
+#front {
+    font-family: 'Comic Neue', cursive;
+    margin: 0;
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    background: $background;
+}
+
+.wishlist {
+    background: $background;
+    padding: .5rem;
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+}
+
+.wishlist {
+    ul {
+        padding: 0;
+        list-style-type: none;
+    }
+
+    li:first-child {
+        border-top: 0;
+    }
+
+    li {
+        padding: .5rem .5rem;
+        border-top: 1px solid #433A3F;
+    }
+
+    input[type="checkbox"] {
+        /* padding-right: 10rem; */
+    }
+}
+
