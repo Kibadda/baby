@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 /* Pallet URL: https://coolors.co/433a3f-504e6a-beb7df-3c887e-f7d488 */
 
 $background: #433A3F;
@@ -6,6 +7,10 @@ $background_secondary: #504E6A;
 $highlight_yellow: #F7D488;
 $highlight_cyan: #3C887E;
 $highlight_grey: #BEB7DF;
+
+* {
+    box-sizing: border-box;
+}
 
 #front {
     font-family: 'Comic Neue', cursive;
@@ -104,3 +109,68 @@ $highlight_grey: #BEB7DF;
     }
 }
 
+#admin {
+    font-family: Roboto;
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    background: $background;
+
+    nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 150px;
+        height: 100%;
+        background: $background_secondary;
+        font-weight: bold;
+
+        ul {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            li {
+                a {
+                    display: block;
+                    padding: .5rem;
+
+                    text-decoration: none;
+                    color: black;
+                }
+
+                &:hover,
+                &.active {
+                    background: $highlight_cyan;
+                }
+            }
+        }
+    }
+
+    main {
+        height: 100%;
+        margin-left: 150px;
+        padding: 1rem;
+        color: white;
+
+        a {
+            display: inline-block;
+            text-decoration: none;
+            border-radius: .25rem;
+            background: $highlight_yellow;
+            color: black;
+            padding: .25rem .5rem;
+
+            font-size: .75rem;
+            text-transform: uppercase;
+
+            &:hover {
+                background: darken($highlight_yellow, 10);
+            }
+        }
+    }
+}
