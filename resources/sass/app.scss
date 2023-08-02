@@ -9,168 +9,168 @@ $highlight_cyan: #3C887E;
 $highlight_grey: #BEB7DF;
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 #front {
-    font-family: 'Comic Neue', cursive;
-    margin: 0;
-    height: 100%;
-    width: 100%;
-    display: grid;
-    place-items: center;
-    background: radial-gradient(circle, rgba($background_secondary,1) 0%, $background 100%);
+  font-family: 'Comic Neue', cursive;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(circle, rgba($background_secondary, 1) 0%, $background 100%);
 }
 
 .wishlist {
-    font-size: 300%;
-    background: $highlight_yellow;
-    display: grid;
-    position: relative;
-    place-items: center;
-    margin: 5rem;
-    border-radius: 2px;
+  font-size: 300%;
+  background: $highlight_yellow;
+  display: grid;
+  position: relative;
+  place-items: center;
+  margin: 5rem;
+  border-radius: 2px;
 
-    &:before,
-    &:after {
-        content: '';
-        position: absolute;
-        bottom: 10px;
-        width: 40%;
-        height: 10px;
-        box-shadow: 0 10px 20px rgba(black, .7);
-        z-index: -1;
-        transition: all .3s ease-in-out;
-    }
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 10px;
+    width: 40%;
+    height: 10px;
+    box-shadow: 0 10px 20px rgba(black, .7);
+    z-index: -1;
+    transition: all .3s ease-in-out;
+  }
+
+  &:before {
+    left: 15px;
+    transform: skew(-5deg) rotate(-5deg);
+  }
+
+  &:after {
+    right: 15px;
+    transform: skew(5deg) rotate(5deg);
+  }
+
+  &:hover:before,
+  &:hover:after {
+    box-shadow: 0 6px 14px rgba(black, .4);
+  }
+
+  &:hover:before {
+    left: 5px;
+  }
+
+  &:hover:after {
+    right: 5px;
+  }
+
+  .horizontal-line {
+    position: relative;
+    height: 100%;
+  }
+
+  .horizontal-line {
+    position: relative;
+    height: 100%;
 
     &:before {
-        left: 15px;
-        transform: skew(-5deg) rotate(-5deg);
+      content: ' ';
+      padding: 3rem 0;
+      height: 100%;
+      top: -3rem;
+      left: 5.5rem;
+      position: absolute;
+      border-left: 3px dashed $highlight_cyan;
     }
+  }
 
-    &:after {
-        right: 15px;
-        transform: skew(5deg) rotate(5deg);
-    }
+  ul {
+    padding: 0;
+    list-style-type: none;
+  }
 
-    &:hover:before,
-    &:hover:after {
-        box-shadow: 0 6px 14px rgba(black, .4);
-    }
+  li:first-child {
+    border-top: 1px dashed $background;
+  }
 
-    &:hover:before {
-        left: 5px;
-    }
+  li:last-child {
+    border-bottom: 1px dashed $background;
+  }
 
-    &:hover:after {
-        right: 5px;
-    }
+  li {
+    padding: .5rem 1.5rem .5rem 7rem;
+    border-top: 1px dashed $background;
+  }
 
-    .horizontal-line {
-        position: relative;
-        height: 100%;
-    }
-
-    .horizontal-line {
-        position: relative;
-        height: 100%;
-
-        &:before {
-            content: ' ';
-            padding: 3rem 0;
-            height: 100%;
-            top: -3rem;
-            left: 5.5rem;
-            position: absolute;
-            border-left: 3px dashed $highlight_cyan;
-        }
-    }
-
-    ul {
-        padding: 0;
-        list-style-type: none;
-    }
-
-    li:first-child {
-        border-top: 1px dashed $background;
-    }
-
-    li:last-child {
-        border-bottom: 1px dashed $background;
-    }
-
-    li {
-        padding: .5rem 1.5rem .5rem 7rem;
-        border-top: 1px dashed $background;
-    }
-
-    input[type="checkbox"] {
-        /* padding-right: 10rem; */
-    }
+  input[type="checkbox"] {
+    /* padding-right: 10rem; */
+  }
 }
 
 #admin {
-    font-family: Roboto;
-    margin: 0;
-    height: 100vh;
-    width: 100vw;
-    background: $background;
+  font-family: Roboto;
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  background: $background;
 
-    nav {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 150px;
-        height: 100%;
-        background: $background_secondary;
-        font-weight: bold;
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 150px;
+    height: 100%;
+    background: $background_secondary;
+    font-weight: bold;
 
-        ul {
-            height: 100%;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            list-style: none;
-            margin: 0;
-            padding: 0;
+    ul {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      list-style: none;
+      margin: 0;
+      padding: 0;
 
-            li {
-                a {
-                    display: block;
-                    padding: .5rem;
-
-                    text-decoration: none;
-                    color: black;
-                }
-
-                &:hover,
-                &.active {
-                    background: $highlight_cyan;
-                }
-            }
-        }
-    }
-
-    main {
-        height: 100%;
-        margin-left: 150px;
-        padding: 1rem;
-        color: white;
-
+      li {
         a {
-            display: inline-block;
-            text-decoration: none;
-            border-radius: .25rem;
-            background: $highlight_yellow;
-            color: black;
-            padding: .25rem .5rem;
+          display: block;
+          padding: .5rem;
 
-            font-size: .75rem;
-            text-transform: uppercase;
-
-            &:hover {
-                background: darken($highlight_yellow, 10);
-            }
+          text-decoration: none;
+          color: black;
         }
+
+        &:hover,
+        &.active {
+          background: $highlight_cyan;
+        }
+      }
     }
+  }
+
+  main {
+    height: 100%;
+    margin-left: 150px;
+    padding: 1rem;
+    color: white;
+
+    a {
+      display: inline-block;
+      text-decoration: none;
+      border-radius: .25rem;
+      background: $highlight_yellow;
+      color: black;
+      padding: .25rem .5rem;
+
+      font-size: .75rem;
+      text-transform: uppercase;
+
+      &:hover {
+        background: darken($highlight_yellow, 10);
+      }
+    }
+  }
 }
