@@ -8,7 +8,6 @@
         <title>{{ $title ?? 'Page Title' }}</title>
     </head>
     <body id="front">
-    <body>
         {{ $slot }}
     </body>
 </html>
